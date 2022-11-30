@@ -1,0 +1,32 @@
+{
+  "name": "@ksh5324/testpack",
+  "version": "1.0.17",
+  "description": "",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "author": "ksh5324",
+  "scripts": {
+    "build:clear": "rm -rf build",
+    "build": "yarn build:clear && tsc && node ./esbuild.config.js",
+    "build-publish": "npm run build && npm version patch && node setupPackage.js && cd build && npm publish"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@types/react-outside-click-handler": "^1.3.1",
+    "@types/styled-components": "^5.1.26",
+    "esbuild": "^0.15.16",
+    "esbuild-plugin-inline-image": "^0.0.9",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
+  }
+}
